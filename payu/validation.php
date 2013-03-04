@@ -57,7 +57,7 @@ foreach ( $cart->getProducts() as $item )
 	$forSend['ORDER_PINFO'][] = $item['description_short'];
 	$forSend['ORDER_PRICE'][] = $price;
 	$forSend['ORDER_QTY'][] = $item['quantity'];
-	$forSend['ORDER_VAT'][] = $item['rate'];
+	$forSend['ORDER_VAT'][] = ($item['rate'] != '') ? $item['rate'] : 0;
 	
 }
 
